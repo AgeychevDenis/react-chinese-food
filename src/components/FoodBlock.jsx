@@ -1,5 +1,6 @@
 import React from 'react'
-// import img1 from '../assets/img/card__img/img-1.png'
+import PropTypes from 'prop-types'
+
 
 function FoodBlock({ name, description, price, count, type, imageUrl }) {
    return (
@@ -21,5 +22,22 @@ function FoodBlock({ name, description, price, count, type, imageUrl }) {
       </div>
    )
 }
+
+FoodBlock.defaultProps = {
+   name: '---',
+   description: '---',
+   price: 0,
+   count: 0,
+   type: '--',
+}
+
+FoodBlock.propTypes = {
+   name: PropTypes.string.isRequired,
+   description: PropTypes.string.isRequired,
+   price: PropTypes.number.isRequired,
+   count: PropTypes.number.isRequired,
+   type: PropTypes.string.isRequired,
+   imageUrl: PropTypes.string.isRequired,
+};
 
 export default FoodBlock

@@ -1,11 +1,6 @@
 import React from 'react';
 // import Button from './components/Button'
 
-
-// import img2 from './assets/img/card__img/img-2.png'
-// import img3 from './assets/img/card__img/img-3.png'
-// import img4 from './assets/img/card__img/img-4.png'
-
 import { Home, Cart } from './pages';
 import { Route } from 'react-router-dom';
 
@@ -20,8 +15,6 @@ function App() {
         setFoods(json.foods);
       })
   }, []);
-
-  console.log(foods);
 
   return (
     <section className="catalog">
