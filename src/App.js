@@ -1,37 +1,29 @@
 import React from 'react';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 import { Home, Cart } from './pages';
-import axios from 'axios';
 import { Route } from 'react-router-dom';
 import { setFoods } from './redux/actions/foods';
-import { connect } from 'react-redux';
 
 
-class App extends React.Component {
-  componentDidMount() {
+function App() {
+  const dispatch = useDispatch();
+
+
+  React.useEffect(() => {
     axios.get('http://localhost:3000/db.json').then(({ data }) => {
-      this.props.setFoods(data.foods);
+      dispatch(setFoods(data.foods))
     });
-  }
-  render() {
-    console.log(this.props);
-    return (
-      <section className="catalog">
-        <Route path="/" render={() => <Home items={this.props.items} />} exact />
-        <Route path="/cart" component={Cart} exact />
-      </section >
-    );
-  }
-}
-export default connect(
-  (state) => {
-    return {
-      items: state.foods.items,
-    };
-  },
-  (dispatch) => {
-    return {
-      setFoods: (items) => dispatch(setFoods(items)),
-    };
-  },
-)(App);
+  }, []);
+
+  return (
+    <section className="catalog">
+      <Route path="/" component={Home} exact />
+      <Route path="/cart" component={Cart} exact />
+    </section >
+  );
+};
+
+export default App;
+
