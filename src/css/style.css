@@ -163,7 +163,6 @@ body {
 .product-item__btn:hover {
    background-color: #d58c51;
    border: 1px solid #d58c51;
-   transform: rotate(-360deg);
 }
 
 .product-item__wrapper:hover {
@@ -235,6 +234,7 @@ body {
    cursor: pointer;
    position: relative;
    transform: translateY(-4px);
+   transition: all 0.3s;
 }
 
 .cart-item__btn::before {
@@ -254,6 +254,18 @@ body {
    background-color: #d58c51;
    transform: rotate(-45deg);
    left: 5px;
+}
+
+.cart-item__btn:hover {
+   border: 1px solid #fff;
+}
+
+.cart-item__btn:hover::after {
+   background-color: #fff;
+}
+
+.cart-item__btn:hover::before {
+   background-color: #fff;
 }
 
 .cart__bottom {

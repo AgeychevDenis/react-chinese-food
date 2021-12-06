@@ -4,13 +4,23 @@ const initialState = {
 };
 
 const foods = (state = initialState, action) => {
-   if (action.type === 'SET_FOODS') {
-      return {
-         ...state,
-         items: action.payload,
-      };
+   switch (action.type) {
+      case 'SET_FOODS':
+         return {
+            ...state,
+            items: action.payload,
+            isLoaded: true,
+         };
+
+      case 'SET_LOADED':
+         return {
+            ...state,
+            isLoaded: action.payload,
+         };
+
+      default:
+         return state;
    }
-   return state;
 };
 
 export default foods;

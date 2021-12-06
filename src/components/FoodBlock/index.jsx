@@ -1,8 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from '../Button'
 
 
-function FoodBlock({ name, description, price, count, type, imageUrl }) {
+function FoodBlock({ id, name, description, price, count, type, imageUrl, onClickAddFood }) {
+
+   const onAddFood = () => {
+      const obj = {
+         id,
+         name,
+         imageUrl,
+         price
+      }
+      onClickAddFood(obj);
+   };
+
    return (
       <div className="product-item__wrapper">
          <div className="product-item__inner">
@@ -17,9 +29,13 @@ function FoodBlock({ name, description, price, count, type, imageUrl }) {
                {price} ₽
                <span>/ {count} {type}</span>
             </p>
-            <button type="button" className="product-item__btn">+</button>
+            <Button
+               onClick={onAddFood}
+               className="product-item__btn">
+               +
+            </Button>
          </div>
-      </div>
+      </div >
    )
 }
 
@@ -28,7 +44,7 @@ FoodBlock.defaultProps = {
    description: '---',
    price: 0,
    count: 0,
-   type: '--',
+   type: '--'
 }
 
 FoodBlock.propTypes = {
@@ -38,6 +54,7 @@ FoodBlock.propTypes = {
    count: PropTypes.number.isRequired,
    type: PropTypes.string.isRequired,
    imageUrl: PropTypes.string.isRequired,
+   onAddFood: PropTypes.func,
 };
 
 export default FoodBlock

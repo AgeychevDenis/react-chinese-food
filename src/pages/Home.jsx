@@ -1,11 +1,28 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import basket from '../assets/img/icon/basket.svg'
-import { FoodBlock } from '../components'
+import { FoodBlock, FoodLoadingBlock } from '../components'
+import { fetchFoods } from '../redux/actions/foods';
+import { addFoodToCart } from '../redux/actions/cart';
 
 function Home() {
+   const dispatch = useDispatch();
    const items = useSelector(({ foods }) => foods.items);
+   // const cartItems = useSelector(({ cart }) => cart.items);
+   const isLoaded = useSelector(({ foods }) => foods.isLoaded);
+   const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+
+   const handleAddFoodToCart = (obj) => {
+      dispatch({
+         type: 'ADD_FOOD_CART',
+         payload: obj,
+      });
+   };
+
+   React.useEffect(() => {
+      dispatch(fetchFoods())
+   }, [dispatch]);
 
    return (
       <div className="container">
@@ -13,17 +30,22 @@ function Home() {
             <h1 className="catalog__title">наша продукция</h1>
             <div className="catalog__basket">
                <div className="catalog__basket-items">
-                  <span>3 товара</span>
-                  <span>на сумму 3 500 ₽</span>
+                  <span>{totalCount} товара</span>
+                  <span>на сумму {totalPrice} ₽</span>
                </div>
                <a className="catalog__basket-img" href="Cart"><img src={basket}
                   alt="Корзина" /></a>
             </div>
          </div>
          <div className="catalog__inner product-item">
-            {items && items.map((obj) => (
-               <FoodBlock key={obj.id} {...obj} />
-            ))}
+            {isLoaded ? items.map((obj) => <FoodBlock
+               onClickAddFood={handleAddFoodToCart}
+               key={obj.id}
+               {...obj} />
+            )
+               : Array(8)
+                  .fill(0)
+                  .map((_, index) => <FoodLoadingBlock key={index} />)}
          </div>
       </div>
    )
