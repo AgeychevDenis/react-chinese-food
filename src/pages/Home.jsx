@@ -1,15 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import basket from '../assets/img/icon/basket.svg'
 import { FoodBlock, FoodLoadingBlock } from '../components'
 import { fetchFoods } from '../redux/actions/foods';
-import { addFoodToCart } from '../redux/actions/cart';
 
 function Home() {
    const dispatch = useDispatch();
    const items = useSelector(({ foods }) => foods.items);
-   // const cartItems = useSelector(({ cart }) => cart.items);
    const isLoaded = useSelector(({ foods }) => foods.isLoaded);
    const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
 
@@ -33,8 +32,11 @@ function Home() {
                   <span>{totalCount} товара</span>
                   <span>на сумму {totalPrice} ₽</span>
                </div>
-               <a className="catalog__basket-img" href="Cart"><img src={basket}
-                  alt="Корзина" /></a>
+               <Link to="/cart">
+                  <button className="catalog__basket-img" >
+                     <img src={basket} alt="Корзина" />
+                  </button>
+               </Link>
             </div>
          </div>
          <div className="catalog__inner product-item">

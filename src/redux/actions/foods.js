@@ -7,9 +7,11 @@ export const setLoaded = (payload) => ({
 
 export const fetchFoods = () => (dispatch) => {
    dispatch(setLoaded(false))
-   axios.get('/foods').then(({ data }) => {
-      dispatch(setFoods(data));
-   });
+   axios
+      .get('/foods')
+      .then(({ data }) => {
+         dispatch(setFoods(data));
+      });
 };
 
 export const setFoods = (items) => ({
