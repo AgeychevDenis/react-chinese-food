@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { CartItem } from '../components';
-import { clearCart, removeCartItem } from "../redux/actions/cart"
+import { removeCartItem } from "../redux/actions/cart"
 import icon from '../assets/img/icon/add_shopping.svg'
 
 function Card() {

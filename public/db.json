@@ -72,5 +72,12 @@
          "count": 500,
          "type": "г."
       }
+   ],
+   "login": [
+      {
+         "id": 12,
+         "email": "ageychev@bk.ru",
+         "password": "1234"
+      }
    ]
 }
