@@ -8,7 +8,7 @@ export const setLoaded = (payload) => ({
 export const fetchFoods = () => (dispatch) => {
    dispatch(setLoaded(false))
    axios
-      .get('/foods')
+      .get('http://myjson.dit.upm.es/api/bins/c2ox')
       .then(({ data }) => {
          dispatch(setFoods(data));
       });
