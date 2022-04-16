@@ -43,15 +43,14 @@ body {
 }
 
 .container {
-   max-width: 1440px;
+   max-width: 1320px;
+   padding: 0 10px;
    margin: 0 auto;
-   padding: 0 70px;
 }
 
 .catalog__block {
    display: flex;
    justify-content: space-between;
-
    margin: 50px 0 80px;
 }
 
@@ -93,15 +92,15 @@ body {
 
 .catalog__inner {
    display: flex;
-   justify-content: space-between;
    flex-wrap: wrap;
 }
 
 .product-item__wrapper {
-   width: 310px;
+   flex-basis: calc(1300px / 4 - 20px);
    min-height: 550px;
    border: 1px solid #d58c51;
    padding: 43px 20px 32px;
+   margin: 6px;
    transition: color 0.3s;
    cursor: pointer;
    margin-bottom: 35px;
@@ -173,8 +172,7 @@ body {
 
 /*===shopping_cart=====================================================================================================================================================*/
 
-.cart {
-}
+.cart {}
 
 .cart__container {
    max-width: 860px;
@@ -190,11 +188,9 @@ body {
    line-height: 38px;
 }
 
-.cart__top {
-}
+.cart__top {}
 
-.cart-item {
-}
+.cart-item {}
 
 .cart-item__wrapper {
    display: flex;
@@ -248,6 +244,7 @@ body {
    transform: rotate(45deg);
    left: 5px;
 }
+
 .cart-item__btn::after {
    content: "";
    position: absolute;
@@ -392,8 +389,7 @@ body {
    padding-bottom: 36px;
 }
 
-.form {
-}
+.form {}
 
 .form__wrapper-input {
    position: relative;
@@ -441,7 +437,7 @@ body {
    cursor: pointer;
 }
 
-.form__checkbox:checked + .form__checkbox-mark {
+.form__checkbox:checked+.form__checkbox-mark {
    background-color: #ffd2ad;
 }
 
@@ -469,4 +465,44 @@ body {
 
 .form__btn button:hover {
    opacity: 0.8;
+}
+
+@media (max-width: 1315px) {
+   .container {
+      max-width: 992px;
+   }
+}
+
+@media (max-width: 992px) {
+   .container {
+      max-width: 668px;
+   }
+}
+
+@media (max-width: 668px) {
+   .container {
+      max-width: 320px;
+      padding: 0;
+   }
+
+   .catalog__block {
+      display: block;
+      margin: 25px 0 50px;
+   }
+
+   .catalog__title {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 27px;
+   }
+
+   .catalog__basket {
+      align-items: center;
+   }
+
+   .catalog__basket-items {
+      text-align: start;
+      padding-left: 20px;
+      order: 1;
+   }
 }
