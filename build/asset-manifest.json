@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e741da2e.chunk.css",
+    "main.js": "/static/js/main.c3bd3fe2.chunk.js",
+    "main.js.map": "/static/js/main.c3bd3fe2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a1243d0f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a1243d0f.js.map",
+    "static/js/2.e0e3ebf6.chunk.js": "/static/js/2.e0e3ebf6.chunk.js",
+    "static/js/2.e0e3ebf6.chunk.js.map": "/static/js/2.e0e3ebf6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e741da2e.chunk.css.map": "/static/css/main.e741da2e.chunk.css.map",
+    "static/js/2.e0e3ebf6.chunk.js.LICENSE.txt": "/static/js/2.e0e3ebf6.chunk.js.LICENSE.txt",
+    "static/media/add_shopping.38cd5eea.svg": "/static/media/add_shopping.38cd5eea.svg",
+    "static/media/basket.903dae68.svg": "/static/media/basket.903dae68.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1243d0f.js",
+    "static/js/2.e0e3ebf6.chunk.js",
+    "static/css/main.e741da2e.chunk.css",
+    "static/js/main.c3bd3fe2.chunk.js"
+  ]
+}
