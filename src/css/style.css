@@ -175,8 +175,9 @@ body {
 .cart {}
 
 .cart__container {
-   max-width: 860px;
+   max-width: 890px;
    margin: 0 auto;
+   padding: 0 15px;
 }
 
 .cart__title {
@@ -188,15 +189,24 @@ body {
    line-height: 38px;
 }
 
-.cart__top {}
-
-.cart-item {}
-
 .cart-item__wrapper {
    display: flex;
    align-items: center;
    justify-content: space-between;
    margin-bottom: 30px;
+}
+
+.cart-item__block {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-basis: 25%;
+}
+
+.cart-item__inner {
+   display: flex;
+   align-items: center;
+   flex: 0 1 70%;
 }
 
 .cart-item__wrapper:last-child {
@@ -209,8 +219,8 @@ body {
 
 .cart-item__title {
    font-weight: 500;
-   flex: 0 1 50%;
    line-height: 21px;
+   margin-left: 40px;
 }
 
 .cart-item__price {
@@ -271,7 +281,7 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding-top: 20px;
+   padding: 20px 0;
    position: relative;
 }
 
@@ -479,6 +489,24 @@ body {
    }
 }
 
+@media (max-width: 890px) {
+   .cart-item__inner {
+      align-items: flex-start;
+   }
+
+   .cart-item__wrapper {
+      display: block;
+   }
+
+   .cart-item__block {
+      justify-content: end;
+   }
+
+   .cart-item__block p {
+      margin-right: 30px;
+   }
+}
+
 @media (max-width: 668px) {
    .container {
       max-width: 320px;
@@ -498,11 +526,53 @@ body {
 
    .catalog__basket {
       align-items: center;
+      margin-left: 10px;
    }
 
    .catalog__basket-items {
       text-align: start;
       padding-left: 20px;
       order: 1;
+   }
+
+   .cart__bottom {
+      display: block;
+   }
+
+   .cart__price-total {
+      margin-bottom: 20px;
+   }
+
+   .cart__add {
+      margin: 60px 0 60px;
+   }
+}
+
+@media (max-width: 425px) {
+   .cart-item__img img {
+      width: 95px;
+   }
+
+   .cart-item__title {
+      margin-left: 15px;
+   }
+
+   .cart-item__inner {
+      margin-bottom: 30px;
+   }
+
+   .cart-item__wrapper {
+      border-bottom: 1px solid #d58c5159;
+      padding-bottom: 15px;
+
+   }
+
+   .cart-item__block p {
+      margin-right: 25px;
+   }
+
+   .cart__title {
+      font-size: 27px;
+      line-height: 33px;
    }
 }
