@@ -2,7 +2,18 @@
 
 ### :earth_americas: [Сайт проекта Chinese-Food](https://react-chinese-food.vercel.app/)
 
-Веб-приложение добовление товаров в корзину
+Веб-приложение с возможностью добавление товаров в корзину
+
+***Использовал библиотеки***
+
+1. Axios
+2. Prop-types
+3. React
+4. React-content-loader
+5. React-redux
+6. Provider
+7. React-router-dom
+8. Json-server
 
 ![Alt Text](https://s7.gifyu.com/images/11211.gif)
 
@@ -41,7 +52,7 @@ yarn start
 
 ### Разработал :man:
 
-[AgeychevDenis](https://github.com/AgeychevDenis)
+**[AgeychevDenis](https://github.com/AgeychevDenis)**
 
 
 
